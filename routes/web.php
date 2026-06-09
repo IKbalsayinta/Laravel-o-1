@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcomeBootstrap');
 })->name('home');
 
 Route::view('dashboard', 'dashboard')
@@ -21,6 +21,9 @@ Route::middleware(['auth'])->group(function () {
 
 require __DIR__.'/auth.php';
 
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/admin/cars',\App\Http\Controllers\Admin\CarsController::class);
