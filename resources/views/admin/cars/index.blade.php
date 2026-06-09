@@ -6,13 +6,14 @@
     <table class="table">
         <tr>
             <th>name</th>
-            <th>details</th>
+            <th>merk</th>
             <th>edit</th>
             <th>delete</th>
         </tr>
         @foreach($cars as $car)
         <tr>
             <td>{{$car->name}}</td>
+            <td>{{$car->merk}}</td>
             <td><a href="">Details</a></td>
             <td><a href="">Wijzigen</a></td>
             <td><a href="">Verwijderen</a></td>
