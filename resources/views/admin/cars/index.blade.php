@@ -7,6 +7,7 @@
         <tr>
             <th>name</th>
             <th>merk</th>
+            <th>details</th>
             <th>edit</th>
             <th>delete</th>
         </tr>
