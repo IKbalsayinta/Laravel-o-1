@@ -43,10 +43,12 @@ class CarsController extends Controller
 
     /**
      * Display the specified resource.
+     * @param Cars $cars
+     * @return View
      */
-    public function show(Category $category)
+    public function show(Cars $car)
     {
-        //
+        return view('admin.cars.show', ['car' => $car]);
     }
 
     /**

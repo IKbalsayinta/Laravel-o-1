@@ -15,7 +15,7 @@
         <tr>
             <td>{{$car->name}}</td>
             <td>{{$car->merk}}</td>
-            <td><a href="">Details</a></td>
+            <td><a href="{{ route('cars.show', ['car' => $car->id]) }}">Details</a></td>
             <td><a href="">Wijzigen</a></td>
             <td><a href="">Verwijderen</a></td>
         </tr>
