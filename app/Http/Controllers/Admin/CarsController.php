@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CarsUpdateRequest;
 use App\Models\Cars;
-use App\Models\Category;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -53,25 +53,48 @@ class CarsController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * @param Cars $car
+     * @return View
      */
-    public function edit(Category $category)
+    public function edit(Cars $car): View
     {
-        //
+        return view('admin.cars.edit', ['car' => $car]);
     }
 
     /**
      * Update the specified resource in storage.
+     * @param CarsUpdateRequest $request
+     * @param Cars $car
+     * @return RedirectResponse
      */
-    public function update(Request $request, Category $category)
+    public function update(CarsUpdateRequest $request, Cars $car): RedirectResponse
     {
-        //
+        $car->name = $request->name;
+        $car->merk = $request->merk;
+        $car->save();
+
+        return to_route('cars.index')->with('status', "Car $car->name updated successfully");
+    }
+
+    /**
+     * Show the form for deleting the specified resource.
+     * @param Cars $car
+     * @return View
+     */
+    public function delete(Cars $car): View
+    {
+        return view('admin.cars.delete', ['car' => $car]);
     }
 
     /**
      * Remove the specified resource from storage.
+     * @param Cars $car
+     * @return RedirectResponse
      */
-    public function destroy(Category $category)
+    public function destroy(Cars $car): RedirectResponse
     {
-        //
+        $car->delete();
+
+        return to_route('cars.index')->with('status', "Car $car->name deleted successfully");
     }
 }

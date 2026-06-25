@@ -26,4 +26,5 @@ require __DIR__.'/auth.php';
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/cars/{car}/delete', [App\Http\Controllers\Admin\CarsController::class, 'delete'])->name('cars.delete');
 Route::resource('/admin/cars',\App\Http\Controllers\Admin\CarsController::class);
