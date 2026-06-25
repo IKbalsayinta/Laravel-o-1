@@ -12,19 +12,19 @@
 
     <table class="table">
         <tr>
-            <th>name</th>
-            <th>merk</th>
-            <th>details</th>
-            <th>edit</th>
-            <th>delete</th>
+            <th>Name</th>
+            <th>Merk</th>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         @foreach($cars as $car)
         <tr>
             <td>{{$car->name}}</td>
             <td>{{$car->merk}}</td>
-            <td><a href="{{ route('cars.show', ['car' => $car->id]) }}">Details</a></td>
-            <td><a href="{{ route('cars.edit', ['car' => $car->id]) }}">Wijzigen</a></td>
-            <td><a href="{{ route('cars.delete', ['car' => $car->id]) }}">Verwijderen</a></td>
+            <td><a class="btn btn-outline-info btn-sm" href="{{ route('cars.show', ['car' => $car->id]) }}">Details</a></td>
+            <td><a class="btn btn-outline-warning btn-sm" href="{{ route('cars.edit', ['car' => $car->id]) }}">Wijzigen</a></td>
+            <td><a class="btn btn-outline-danger btn-sm" href="{{ route('cars.delete', ['car' => $car->id]) }}">Verwijderen</a></td>
         </tr>
         @endforeach
     </table>

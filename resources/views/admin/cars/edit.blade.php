@@ -26,7 +26,7 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Wijzigen</button>
+            <button type="submit" class="btn btn-warning">Wijzigen</button>
         </form>
     </div>
 @endsection

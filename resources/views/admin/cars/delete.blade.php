@@ -16,7 +16,7 @@
                 <input type="text" name="merk" class="form-control" value="{{ $car->merk }}" disabled>
             </div>
 
-            <button type="submit" class="btn btn-primary">Delete</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
         </form>
     </div>
 @endsection
